@@ -1,0 +1,15 @@
+[user]
+	name = Christof Krüger
+	email = mail@christof-krueger.de
+[color]
+	diff = auto
+	grep = auto
+	status = auto
+[alias]
+	s = status
+	d = diff
+	l = log
+	a = add
+	c = commit
+	ss = status
+	co = checkout
