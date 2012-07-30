@@ -1,15 +1,35 @@
+[gui]
+	fontdiff = -family \"DejaVu Sans Mono\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 [user]
 	name = Christof Krüger
 	email = mail@christof-krueger.de
 [color]
-	diff = auto
 	grep = auto
-	status = auto
+	diff = auto
+	status = always
+	branch = auto
+[pretty]
+    oxygene = tformat:%C(yellow)%h%Creset %C(white dim)(%ai)%Creset%C(green bold)%d%Creset %s %C(white dim)(%an)%Creset
+    oxygenesl = tformat:%C(yellow)%h%Creset %C(white dim)(%ai)%Creset%C(green bold)%d%Creset %s
 [alias]
+	a = add
 	s = status
 	d = diff
-	l = log
-	a = add
+	l = log --pretty=oxygene
+	ll = log
+	b = branch
 	c = commit
-	ss = status
-	co = checkout
+	ch = checkout
+	g = grep
+	ss = status -uno
+	ds = diff --staged
+	sl = !git log \":/git-svn-id: \"..HEAD --pretty=oxygenesl
+	chp = cherry-pick
+	fix = !git rebase -i --autosquash $(git rev-parse \":/git-svn-id: \")
+[log]
+	decorate = true
+[svn]
+	rmdir = true
+[merge]
+	tool = bc3
